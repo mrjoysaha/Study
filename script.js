@@ -550,11 +550,13 @@ document.getElementById("closePopup");
 
 function openSubject(subject){
 
-    popupTitle.textContent=subject;
+    popupTitle.textContent = subject;
+
+    buildChapterList(subject);
 
     popupOverlay.classList.add("active");
 
-    buildChapterList(subject);
+    document.body.style.overflow = "hidden";
 
 }
 
@@ -565,6 +567,8 @@ function openSubject(subject){
 function closePopup(){
 
     popupOverlay.classList.remove("active");
+
+    document.body.style.overflow = "";
 
 }
 
@@ -931,6 +935,16 @@ items[selectedIndex].click();
 }
 
 }
+
+});
+
+document.addEventListener("keydown",(e)=>{
+
+    if(e.key==="Escape"){
+
+        closePopup();
+
+    }
 
 });
 
