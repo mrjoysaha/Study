@@ -1208,19 +1208,19 @@ section{
 
     inset:0;
 
-    background:rgba(0,0,0,.55);
-
-    backdrop-filter:blur(8px);
-
     display:none;
 
     justify-content:center;
 
     align-items:center;
 
-    z-index:5000;
+    background:rgba(0,0,0,.6);
 
-    padding:25px;
+    backdrop-filter:blur(8px);
+
+    z-index:9999;
+
+    overflow:hidden;
 
 }
 
@@ -1236,21 +1236,21 @@ section{
 
 .popup-window{
 
-    width:100%;
+    width:min(700px,95%);
 
-    max-width:700px;
-
-    max-height:85vh;
+    max-height:90vh;
 
     background:var(--surface);
 
-    border-radius:28px;
+    border-radius:25px;
+
+    display:flex;
+
+    flex-direction:column;
 
     overflow:hidden;
 
-    box-shadow:0 25px 80px rgba(0,0,0,.25);
-
-    animation:popupShow .35s ease;
+    animation:popupShow .3s ease;
 
 }
 
@@ -1332,6 +1332,7 @@ section{
     background:#fff;
 
     color:var(--primary);
+   flex-shrink:0;
 
 }
 
@@ -1344,6 +1345,7 @@ section{
     padding:20px 25px;
 
     border-bottom:1px solid var(--border);
+   flex-shrink:0;
 
 }
 
@@ -1381,11 +1383,15 @@ section{
 
 .chapter-list{
 
-    max-height:480px;
+    flex:1;
 
     overflow-y:auto;
 
+    overflow-x:hidden;
+
     padding:20px;
+
+    min-height:0;
 
 }
 
