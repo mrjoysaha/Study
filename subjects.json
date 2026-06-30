@@ -190,4 +190,28 @@
     ],
     "favorite": false
   }
+
+
+  
+  {
+    "id": 13,
+    "subject": "Current Affairs",
+    "category": "2026",
+    "title": "Current Affairs 2026",
+    "description": "Monthly Current Affairs",
+    "keywords": "current affairs 2026",
+    "file": "notes/current-affairs/current-2026.html",
+    "icon": "📰",
+    "exam": [
+      "WBPSC",
+      "SSC",
+      "RRB"
+    ],
+    "favorite": false
+  }
+
+
+  
 ]
+
+
