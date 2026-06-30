@@ -1,525 +1,593 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Topper's Handwritten Notes: Paschim Bardhaman District</title>
-    <!-- Google Fonts for handwriting and neat Bengali typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Atma:wght@500;700&family=Hind+Siliguri:wght@400;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        :root {
-            --red-marker: #c53030;      /* Headings, critical concepts */
-            --blue-gel: #1e3a8a;        /* Main explanations & details */
-            --green-ink: #15803d;       /* Examples, memory tricks, mnemonics */
-            --yellow-highlight: rgba(253, 224, 71, 0.6); /* Highlights */
-            --pencil-grey: #4b5563;     /* Diagram boundaries and sketches */
-            --paper-bg: #ffffff;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-        body {
-            font-family: 'Hind Siliguri', sans-serif;
-            background-color: #f0f2f5;
-            color: var(--blue-gel);
-            line-height: 1.7;
-        }
+<title>Topper Study Hub</title>
 
-        .handwritten-title {
-            font-family: 'Atma', cursive;
-            color: var(--red-marker);
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        .sketch-font {
-            font-family: 'Caveat', cursive;
-        }
+<style>
 
-        /* Standard A4 Sheet Styling */
-        .a4-page {
-            width: 210mm;
-            min-height: 297mm;
-            padding: 20mm;
-            margin: 20px auto;
-            background: var(--paper-bg);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            position: relative;
-            box-sizing: border-box;
-            border-radius: 4px;
-            overflow: hidden;
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
 
-        /* Yellow Highlighter Effect */
-        .highlight {
-            background-image: linear-gradient(120deg, var(--yellow-highlight) 0%, var(--yellow-highlight) 100%);
-            background-repeat: no-repeat;
-            background-size: 100% 0.35em;
-            background-position: 0 85%;
-            padding: 0 4px;
-            font-weight: 700;
-        }
+body{
+background:#f5f7fb;
+color:#222;
+transition:.4s;
+}
 
-        /* Red Callout Box */
-        .critical-box {
-            border: 2px dashed var(--red-marker);
-            border-radius: 12px;
-            padding: 15px;
-            background-color: #fffafb;
-            position: relative;
-        }
+body.dark{
+background:#10131b;
+color:white;
+}
 
-        /* Green Mnemonics Box */
-        .mnemonic-box {
-            border: 2px dashed var(--green-ink);
-            border-radius: 12px;
-            padding: 15px;
-            background-color: #f0fdf4;
-        }
+header{
 
-        /* Pencil Sketch Wrapper */
-        .sketch-container {
-            border: 2px solid var(--pencil-grey);
-            border-radius: 16px;
-            padding: 15px;
-            background-color: #fafafa;
-            position: relative;
-        }
+background:linear-gradient(135deg,#2563eb,#0ea5e9);
 
-        .sketch-arrow {
-            color: var(--pencil-grey);
-            font-weight: bold;
-        }
+padding:25px;
 
-        /* Custom Underlines */
-        .underline-sketch {
-            border-bottom: 2px dashed var(--red-marker);
-        }
+color:white;
 
-        /* Printable setup */
-        @media print {
-            body {
-                background: none;
-                color: #000;
-            }
-            .a4-page {
-                margin: 0;
-                box-shadow: none;
-                page-break-after: always;
-                width: 210mm;
-                height: 297mm;
-                padding: 15mm;
-            }
-            .no-print {
-                display: none !important;
-            }
-        }
+display:flex;
 
-        /* Custom interactive UI elements */
-        .btn-action {
-            transition: all 0.3s ease;
-        }
-        .btn-action:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-    </style>
+justify-content:space-between;
+
+align-items:center;
+
+position:sticky;
+
+top:0;
+
+z-index:1000;
+
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+.logo{
+
+font-size:30px;
+
+font-weight:700;
+
+}
+
+.search{
+
+width:350px;
+
+max-width:90%;
+
+padding:12px 18px;
+
+border-radius:30px;
+
+border:none;
+
+outline:none;
+
+font-size:15px;
+
+}
+
+.theme{
+
+cursor:pointer;
+
+font-size:28px;
+
+}
+
+.hero{
+
+padding:60px 30px;
+
+text-align:center;
+
+background:linear-gradient(135deg,#3b82f6,#06b6d4);
+
+color:white;
+
+}
+
+.hero h1{
+
+font-size:45px;
+
+margin-bottom:15px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+opacity:.9;
+
+}
+
+.container{
+
+display:flex;
+
+}
+
+.sidebar{
+
+width:240px;
+
+background:white;
+
+padding:25px;
+
+min-height:100vh;
+
+box-shadow:4px 0 20px rgba(0,0,0,.05);
+
+}
+
+body.dark .sidebar{
+
+background:#181d29;
+
+}
+
+.sidebar a{
+
+display:block;
+
+padding:14px;
+
+text-decoration:none;
+
+color:inherit;
+
+border-radius:10px;
+
+margin-bottom:8px;
+
+transition:.3s;
+
+}
+
+.sidebar a:hover{
+
+background:#2563eb;
+
+color:white;
+
+}
+
+.main{
+
+flex:1;
+
+padding:40px;
+
+}
+
+.section-title{
+
+font-size:30px;
+
+margin-bottom:25px;
+
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+}
+
+.card{
+
+background:white;
+
+padding:25px;
+
+border-radius:20px;
+
+cursor:pointer;
+
+transition:.35s;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+body.dark .card{
+
+background:#1b2230;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.card h3{
+
+margin-bottom:12px;
+
+}
+
+.card span{
+
+font-size:14px;
+
+color:#777;
+
+}
+
+.popup{
+
+position:fixed;
+
+left:50%;
+
+top:50%;
+
+transform:translate(-50%,-50%);
+
+background:white;
+
+width:450px;
+
+max-width:95%;
+
+border-radius:20px;
+
+display:none;
+
+padding:25px;
+
+z-index:999;
+
+box-shadow:0 25px 60px rgba(0,0,0,.25);
+
+}
+
+body.dark .popup{
+
+background:#1c2434;
+
+}
+
+.popup h2{
+
+margin-bottom:20px;
+
+}
+
+.popup a{
+
+display:block;
+
+padding:14px;
+
+margin:8px 0;
+
+background:#f1f5f9;
+
+border-radius:10px;
+
+text-decoration:none;
+
+color:#222;
+
+transition:.3s;
+
+}
+
+body.dark .popup a{
+
+background:#2a3243;
+
+color:white;
+
+}
+
+.popup a:hover{
+
+background:#2563eb;
+
+color:white;
+
+}
+
+.close{
+
+float:right;
+
+cursor:pointer;
+
+font-size:22px;
+
+}
+
+.overlay{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.45);
+
+display:none;
+
+z-index:998;
+
+}
+
+footer{
+
+padding:40px;
+
+text-align:center;
+
+color:#888;
+
+}
+
+@media(max-width:900px){
+
+.container{
+
+flex-direction:column;
+
+}
+
+.sidebar{
+
+width:100%;
+
+min-height:auto;
+
+display:flex;
+
+overflow:auto;
+
+}
+
+.sidebar a{
+
+white-space:nowrap;
+
+margin-right:10px;
+
+}
+
+.hero h1{
+
+font-size:34px;
+
+}
+
+}
+
+</style>
+
 </head>
-<body class="p-4 sm:p-8">
 
-    <!-- Control Panel -->
-    <div class="max-w-4xl mx-auto mb-6 flex flex-wrap justify-between items-center bg-white p-4 rounded-xl shadow-md no-print">
-        <div class="flex items-center space-x-3">
-            <span class="w-3 h-3 bg-red-600 rounded-full animate-ping"></span>
-            <h1 class="font-bold text-gray-800">Topper's Study Hub (পরীক্ষা প্রস্তুতি ২০২৬)</h1>
-        </div>
-        <div class="flex space-x-2 mt-2 sm:mt-0">
-            <button onclick="window.print()" class="btn-action bg-red-600 text-white px-4 py-2 rounded-lg font-semibold flex items-center space-x-1">
-                <span>🖨️ PDF প্রিন্ট করুন</span>
-            </button>
-            <button onclick="toggleSolutions()" class="btn-action bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold flex items-center space-x-1">
-                <span>👁️ উত্তর দেখান/লুকান</span>
-            </button>
-        </div>
-    </div>
+<body>
 
-    <!-- PAGE 1 -->
-    <div class="a4-page mx-auto shadow-xl relative text-base">
-        <!-- Top Sticky Header inside notebook page -->
-        <div class="flex justify-between items-center border-b-2 border-gray-200 pb-3 mb-6">
-            <div class="text-xs text-gray-400 font-mono tracking-widest">RANK 1 NOTES | WB PANCHAYAT & ICDS</div>
-            <div class="text-xs text-red-500 font-bold bg-red-50 px-2 py-1 rounded">SUPER HIGH RETENTION</div>
-        </div>
+<header>
 
-        <!-- Notebook Title Section -->
-        <div class="text-center my-6">
-            <h1 class="handwritten-title text-3xl sm:text-4xl font-bold tracking-tight mb-2">
-                অধ্যায়: পশ্চিম বর্ধমান জেলার সম্পূর্ণ রূপরেখা
-            </h1>
-            <p class="text-sm font-semibold text-green-700 uppercase tracking-widest">[পঞ্চায়েত ও আই.সি.ডি.এস স্পেশাল স্টাডি শিট]</p>
-            <div class="w-32 h-1 bg-gradient-to-r from-red-500 via-yellow-400 to-green-500 mx-auto mt-2 rounded"></div>
-        </div>
+<div class="logo">📚 Topper Study Hub</div>
 
-        <!-- 1. Introduction and Historical Context -->
-        <div class="mt-8">
-            <h2 class="handwritten-title text-xl font-bold flex items-center mb-3">
-                <span class="text-white bg-red-600 rounded-full w-7 h-7 inline-flex items-center justify-center text-sm mr-2">১</span>
-                ভূমিকা ও ঐতিহাসিক পটভূমি (Introduction & Historical Context)
-            </h2>
-            <div class="pl-4 border-l-4 border-red-200 space-y-3">
-                <p class="text-blue-900">
-                    <span class="text-red-700 font-semibold underline-sketch">বেসিন-এর চুক্তি (Treaty of Bassein):</span> 
-                    এটি ভারতের ইতিহাসে অত্যন্ত গুরুত্বপূর্ণ একটি চুক্তি, যা <span class="highlight">১৮০২ সালে</span> স্বাক্ষরিত হয়েছিল। এই চুক্তির ফলে ব্রিটিশ সাম্রাজ্যের হাত ধরে মারাঠা শক্তির পতনের সূচনা ঘটে।
-                </p>
-                <ul class="list-disc pl-6 space-y-1 text-blue-900">
-                    <li><strong class="text-red-700">গুরুত্বপূর্ণ ব্যক্তিত্ব:</strong> চুক্তিটি স্বাক্ষরিত হয় তৎকালীন গভর্নর জেনারেল <span class="highlight">লর্ড ওয়েলেসলি (Lord Wellesley)</span> এর আমলে।</li>
-                    <li><strong class="text-red-700">পেশোয়া বাজিরাও II:</strong> ব্রিটিশ ইষ্ট ইন্ডিয়া কোম্পানির সাথে পেশোয়া দ্বিতীয় বাজিরাওয়ের অধীনে এই চুক্তি সম্পন্ন হয়।</li>
-                </ul>
-                <div class="critical-box mt-3 text-sm">
-                    <span class="absolute -top-3 left-4 bg-red-600 text-white text-xs px-2 py-0.5 rounded-full font-bold">ভুল সংশোধন করো! (Common Mistake Alert)</span>
-                    <p class="text-red-800 font-semibold">
-                        ⚠️ ছাত্ররা অনেক সময় 'বেসিন-এর চুক্তি'-কে ১৮০০ সালের সাথে গুলিয়ে ফেলে। মনে রেখো: <span class="underline">১৮০০ সালে</span> কলকাতায় <span class="highlight">ফোর্ট উইলিয়াম কলেজ (Fort William College)</span> প্রতিষ্ঠিত হয়েছিল, কিন্তু বেসিন-এর চুক্তি হয়েছিল <span class="highlight">১৮০২ সালে</span>।
-                    </p>
-                </div>
-            </div>
-        </div>
+<input class="search" placeholder="Search notes...">
 
-        <!-- 2. General Profile of Paschim Bardhaman -->
-        <div class="mt-8">
-            <h2 class="handwritten-title text-xl font-bold flex items-center mb-3">
-                <span class="text-white bg-red-600 rounded-full w-7 h-7 inline-flex items-center justify-center text-sm mr-2">২</span>
-                পশ্চিম বর্ধমান জেলার সাধারণ পরিচিতি (General Profile)
-            </h2>
-            <div class="pl-4 border-l-4 border-red-200 space-y-3 text-blue-900">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-blue-50 p-4 rounded-xl border border-blue-200">
-                        <p class="font-bold text-red-700 mb-1">📅 জেলা গঠন দিবস:</p>
-                        <p><span class="highlight">৭ই এপ্রিল, ২০১৭</span>। পূর্বতন বর্ধমান জেলাকে দ্বিখণ্ডিত করে পূর্ব বর্ধমান ও পশ্চিম বর্ধমান গঠন করা হয়।</p>
-                    </div>
-                    <div class="bg-blue-50 p-4 rounded-xl border border-blue-200">
-                        <p class="font-bold text-red-700 mb-1">⭐ রাজ্যের অবস্থানক্রম:</p>
-                        <p>এটি পশ্চিমবঙ্গের <span class="highlight">২৩তম জেলা (23rd District)</span> হিসেবে আত্মপ্রকাশ করে।</p>
-                    </div>
-                </div>
-                <div class="mt-2">
-                    <p>🏢 <strong class="text-red-700">জেলা সদর দপ্তর (District Headquarters):</strong> <span class="highlight">আসানসোল (Asansol)</span>।</p>
-                    <p>📈 <strong class="text-red-700">বিশেষ মর্যাদা:</strong> আসানসোল জনসংখ্যা ও আয়তনের দিক থেকে পশ্চিমবঙ্গের <span class="highlight">দ্বিতীয় বৃহত্তম শহর</span> (প্রথম স্থানে কলকাতা)।</p>
-                </div>
-            </div>
-        </div>
+<div class="theme" onclick="toggleTheme()">🌙</div>
 
-        <!-- 3. Administrative Structure -->
-        <div class="mt-8">
-            <h2 class="handwritten-title text-xl font-bold flex items-center mb-3">
-                <span class="text-white bg-red-600 rounded-full w-7 h-7 inline-flex items-center justify-center text-sm mr-2">৩</span>
-                প্রশাসনিক পরিকাঠামো (Administrative Structure)
-            </h2>
-            <p class="text-blue-900 mb-3">
-                সমগ্র পশ্চিম বর্ধমান জেলাটি মূলত <span class="highlight">২টি মহকুমায় (Subdivisions)</span> বিভক্ত। এর অধীনে রয়েছে সর্বমোট <strong class="text-red-700">৮টি সমষ্টি উন্নয়ন ব্লক (CD Blocks)</strong> এবং <strong class="text-red-700">৬২টি গ্রাম পঞ্চায়েত (GPs)</strong>।
-            </p>
+</header>
 
-            <div class="overflow-x-auto my-4">
-                <table class="w-full text-left border-collapse border border-gray-300 rounded-lg overflow-hidden text-sm">
-                    <thead>
-                        <tr class="bg-red-500 text-white font-bold">
-                            <th class="p-3 border border-gray-300">বৈশিষ্ট্য / তথ্য</th>
-                            <th class="p-3 border border-gray-300">আসানসোল মহকুমা</th>
-                            <th class="p-3 border border-gray-300">দুর্গাপুর মহকুমা</th>
-                            <th class="p-3 border border-gray-300 bg-red-700">সর্বমোট (Total)</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-blue-900 bg-white">
-                        <tr class="hover:bg-gray-50">
-                            <td class="p-3 border border-gray-300 font-semibold text-red-700">CD ব্লকসমূহ (৮টি)</td>
-                            <td class="p-3 border border-gray-300">৪টি ব্লক: জামুড়িয়া, বারাবনী, সালানপুর, রাণীগঞ্জ</td>
-                            <td class="p-3 border border-gray-300">৪টি ব্লক: কাঁকসা, ফরিদপুর-দুর্গাপুর, অন্ডাল, পাণ্ডবেশ্বর</td>
-                            <td class="p-3 border border-gray-300 font-bold bg-blue-50 text-center">৮টি ব্লক</td>
-                        </tr>
-                        <tr class="hover:bg-gray-50">
-                            <td class="p-3 border border-gray-300 font-semibold text-red-700">গ্রাম পঞ্চায়েত (৬২টি)</td>
-                            <td class="p-3 border border-gray-300">৩৫টি গ্রাম পঞ্চায়েত</td>
-                            <td class="p-3 border border-gray-300">২৭টি গ্রাম পঞ্চায়েত</td>
-                            <td class="p-3 border border-gray-300 font-bold bg-blue-50 text-center">৬২টি GP</td>
-                        </tr>
-                        <tr class="hover:bg-gray-50">
-                            <td class="p-3 border border-gray-300 font-semibold text-red-700">পৌরনিগম (Corporations)</td>
-                            <td class="p-3 border border-gray-300">আসানসোল মিউনিসিপ্যাল কর্পোরেশন</td>
-                            <td class="p-3 border border-gray-300">দুর্গাপুর মিউনিসিপ্যাল কর্পোরেশন</td>
-                            <td class="p-3 border border-gray-300 font-bold bg-blue-50 text-center">২টি পৌরনিগম</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+<section class="hero">
 
-        <!-- Footer for Page 1 -->
-        <div class="absolute bottom-4 left-0 right-0 text-center text-xs text-gray-400">
-            Page 1 of 3 | Handcrafted Topper Notes (Bengal Panchayat Resource Series)
-        </div>
-    </div>
+<h1>Topper Study Notes</h1>
 
+<p>One place for all your handwritten notes</p>
 
-    <!-- PAGE 2 -->
-    <div class="a4-page mx-auto shadow-xl relative text-base mt-8">
-        <div class="flex justify-between items-center border-b-2 border-gray-200 pb-3 mb-6">
-            <div class="text-xs text-gray-400 font-mono tracking-widest">WEST BENGAL GEOGRAPHY SERIES</div>
-            <div class="text-xs text-red-500 font-bold bg-red-50 px-2 py-1 rounded">IMAGE & DIAGRAM SHEET</div>
-        </div>
+</section>
 
-        <!-- 4. Geography and Boundaries -->
-        <div>
-            <h2 class="handwritten-title text-xl font-bold flex items-center mb-3">
-                <span class="text-white bg-red-600 rounded-full w-7 h-7 inline-flex items-center justify-center text-sm mr-2">৪</span>
-                ভৌগোলিক সীমানা ও নদনদী (Geography & Rivers)
-            </h2>
-            <div class="pl-4 border-l-4 border-red-200 space-y-4 text-blue-900">
-                <p>
-                    পশ্চিম বর্ধমান মূলত ছোটনাগপুর মালভূমির অংশ হিসেবে একটি তরঙ্গায়িত ভূপ্রকৃতির অধিকারী। এর সীমানা নিচে অঙ্কিত ম্যাপটির মাধ্যমে সহজবোধ্য করা হলো:
-                </p>
+<div class="container">
 
-                <!-- Mind Map SVG representation of Boundaries -->
-                <div class="sketch-container my-4 text-center">
-                    <p class="text-xs text-gray-500 font-mono italic mb-2">🧭 পেন্সিল স্কেচ: ভৌগোলিক সীমানা বিশ্লেষণ</p>
-                    <div class="flex justify-center items-center">
-                        <svg class="w-full max-w-xs h-60" viewBox="0 0 300 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Center box for Paschim Bardhaman -->
-                            <rect x="90" y="90" width="120" height="50" rx="8" stroke="#4b5563" stroke-width="2" fill="#fff" stroke-dasharray="4 4" />
-                            <text x="150" y="120" fill="#1e3a8a" font-size="12" font-weight="bold" text-anchor="middle" font-family="Hind Siliguri">পশ্চিম বর্ধমান</text>
-                            
-                            <!-- North arrow & text -->
-                            <path d="M150 80 V45" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)" />
-                            <text x="150" y="38" fill="#c53030" font-size="11" font-weight="bold" text-anchor="middle" font-family="Hind Siliguri">উত্তর: বীরভূম ও ধানবাদ</text>
+<nav class="sidebar">
 
-                            <!-- West arrow & text -->
-                            <path d="M80 115 H40" stroke="#4b5563" stroke-width="1.5" />
-                            <text x="35" y="119" fill="#c53030" font-size="11" font-weight="bold" text-anchor="end" font-family="Hind Siliguri">পশ্চিম: ঝাড়খণ্ড</text>
+<a href="#">🏠 Home</a>
 
-                            <!-- East & South arrow & text -->
-                            <path d="M220 115 H255" stroke="#4b5563" stroke-width="1.5" />
-                            <text x="260" y="119" fill="#c53030" font-size="11" font-weight="bold" text-anchor="start" font-family="Hind Siliguri">পূর্ব: পূর্ব বর্ধমান</text>
+<a href="#">📚 Subjects</a>
 
-                            <!-- South arrow & text -->
-                            <path d="M150 150 V185" stroke="#4b5563" stroke-width="1.5" />
-                            <text x="150" y="198" fill="#c53030" font-size="11" font-weight="bold" text-anchor="middle" font-family="Hind Siliguri">দক্ষিণ: বাঁকুড়া</text>
-                            
-                            <!-- Arrow Marker Definition -->
-                            <defs>
-                                <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#4b5563" />
-                                </marker>
-                            </defs>
-                        </svg>
-                    </div>
-                </div>
+<a href="#">⭐ Favorites</a>
 
-                <div class="critical-box my-3 text-sm">
-                    <span class="absolute -top-3 left-4 bg-red-600 text-white text-xs px-2 py-0.5 rounded-full font-bold">পরীক্ষায় বারবার আসা ট্রিক! (High Probability Point)</span>
-                    <p class="text-red-800 font-semibold">
-                        ❌ <strong class="underline">মনে রেখো:</strong> পশ্চিম বর্ধমান জেলাটি কোনোভাবেই <strong class="underline text-black">ঝাড়গ্রাম</strong> জেলার সীমানা স্পর্শ করে না। অপশনে প্রায়ই বিভ্রান্ত করার জন্য এটি থাকে।
-                    </p>
-                </div>
+<a href="#">🕒 Recent</a>
 
-                <h3 class="font-bold text-red-700 text-lg mt-4 underline-sketch">🌊 নদী ও জলসম্পদ (Major Rivers):</h3>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li><strong class="text-red-700">দামোদর নদ (Damodar River):</strong> জেলার দক্ষিণ-পশ্চিম সীমানা জুড়ে প্রবাহিত। এটি জেলার <span class="highlight">প্রধান ও দীর্ঘতম নদী</span>।</li>
-                    <li><strong class="text-red-700">অজয় নদী (Ajay River):</strong> এই জেলাটি অজয় ও দামোদর নদীর অন্তর্বর্তী দোয়াব অঞ্চলে অবস্থিত। অজয় নদী জেলার উত্তর সীমানা চিহ্নিত করে।</li>
-                    <li><strong class="text-red-700">নুনিয়া নদী (Nuniya River):</strong> একটি ছোট স্থানীয় নদী যা মূলত আসানসোল শহরের ওপর দিয়ে প্রবাহিত।</li>
-                    <li><strong class="text-red-700">বরাকর নদী (Barakar River):</strong> দামোদরের সর্ববৃহৎ উপনদী, যা ঝাড়খণ্ড সীমান্তে প্রবাহিত হয়ে এই জেলায় প্রবেশ করেছে।</li>
-                </ul>
-            </div>
-        </div>
+<a href="#">📄 All Notes</a>
 
-        <!-- 5. Industry and Infrastructure -->
-        <div class="mt-8">
-            <h2 class="handwritten-title text-xl font-bold flex items-center mb-3">
-                <span class="text-white bg-red-600 rounded-full w-7 h-7 inline-flex items-center justify-center text-sm mr-2">৫</span>
-                শিল্প ও পরিকাঠামো (Industry & Infrastructure)
-            </h2>
-            <div class="pl-4 border-l-4 border-red-200 space-y-3 text-blue-900">
-                <p>পশ্চিম বর্ধমান ভারতের অন্যতম বৃহত্তম খনিজ সমৃদ্ধ ও শিল্পোন্নত বলয়।</p>
-                <ul class="list-decimal pl-6 space-y-2">
-                    <li>
-                        <strong class="text-red-700">দুর্গাপুর (Durgapur):</strong> ভারতের অন্যতম গুরুত্বপূর্ণ ইস্পাত নগরী। এটিকে <span class="highlight">"ভারতের রূঢ়" (Ruhr of India)</span> বলা হয়, কারণ এখানে কয়লা, লোহা ও ব্যাপক ভারী শিল্পের একত্রীকরণ দেখা যায়।
-                    </li>
-                    <li>
-                        <strong class="text-red-700">চিত্তরঞ্জন লোকোমোটিভ ওয়ার্কস (CLW):</strong> 
-                        আসানসোল মহকুমার ঝাড়খণ্ড সীমান্তে অবস্থিত। এটি <span class="highlight">২৬শে জানুয়ারি, ১৯৫০</span> (সাধারণতন্ত্র দিবস) সালে প্রতিষ্ঠিত হয়। এটি বিশ্বের বৃহত্তম বৈদ্যুতিক রেল ইঞ্জিন প্রস্তুতকারী কারখানাগুলির একটি।
-                    </li>
-                    <li>
-                        <strong class="text-red-700">IISCO (Indian Iron & Steel Company):</strong> 
-                        মূল লৌহ ও ইস্পাত উৎপাদন কারখানাটি <span class="highlight">বার্নপুরে</span> অবস্থিত। এর আদি কারখানা কুলটিতে ছিল এবং প্রধান কর্পোরেট অফিস কলকাতার চৌরঙ্গী রোডে অবস্থিত।
-                    </li>
-                    <li>
-                        <strong class="text-red-700">জে. কে. নগর (JK Nagar):</strong> এটি মূলত <span class="highlight">অ্যালুমিনিয়াম উৎপাদন</span> এবং উন্নত বিটুমিনাস কয়লা খনির জন্য বিখ্যাত।
-                    </li>
-                    <li>
-                        <strong class="text-red-700">কাজী নজরুল ইসলাম আন্তর্জাতিক বিমানবন্দর:</strong> অন্ডাল (Andal) নামক স্থানে অবস্থিত। এটি পশ্চিমবঙ্গের প্রথম বেসরকারি গ্রীনফিল্ড বিমানবন্দর।
-                    </li>
-                </ul>
-            </div>
-        </div>
+<a href="#">📥 Downloads</a>
 
-        <!-- Footer for Page 2 -->
-        <div class="absolute bottom-4 left-0 right-0 text-center text-xs text-gray-400">
-            Page 2 of 3 | Handcrafted Topper Notes (Bengal Panchayat Resource Series)
-        </div>
-    </div>
+<a href="#">⚙ Settings</a>
 
+</nav>
 
-    <!-- PAGE 3 -->
-    <div class="a4-page mx-auto shadow-xl relative text-base mt-8">
-        <div class="flex justify-between items-center border-b-2 border-gray-200 pb-3 mb-6">
-            <div class="text-xs text-gray-400 font-mono tracking-widest">PERSONALITIES & QUIZ CORNER</div>
-            <div class="text-xs text-red-500 font-bold bg-red-50 px-2 py-1 rounded">FINAL REVISION & PRACTICE</div>
-        </div>
+<main class="main">
 
-        <!-- 6. Natural Resources and Power Projects -->
-        <div>
-            <h2 class="handwritten-title text-xl font-bold flex items-center mb-3">
-                <span class="text-white bg-red-600 rounded-full w-7 h-7 inline-flex items-center justify-center text-sm mr-2">৬</span>
-                প্রাকৃতিক সম্পদ ও শক্তি প্রকল্প (Resources & Power)
-            </h2>
-            <div class="pl-4 border-l-4 border-red-200 space-y-3 text-blue-900">
-                <ul class="list-disc pl-6 space-y-2">
-                    <li><strong class="text-red-700">কয়লা (Coal Mine):</strong> রাণীগঞ্জ খনি বলয় ভারতের সবচেয়ে প্রাচীন কয়লা উত্তোলন কেন্দ্র। এখানে মূলত উন্নত মানের <span class="highlight">বিটুমিনাস কয়লা</span> পাওয়া যায়।</li>
-                    <li><strong class="text-red-700">ফায়ার ক্লে (Fireclay):</strong> রাণীগঞ্জ ও সালানপুর অঞ্চলে বিপুল পরিমাণে তাপসহ সিরামিক মাটি বা ফায়ার ক্লে পাওয়া যায় যা মেটালার্জিক্যাল ইন্ডাস্ট্রিতে ব্যবহৃত হয়।</li>
-                    <li><strong class="text-red-700">তিলইয়া প্রকল্প (Tilaiya Dam):</strong> বরাকর নদীর ওপর নির্মিত এটি ছিল <span class="highlight">ডি.ভি.সি. (Damodar Valley Corporation)</span>-এর অধীনস্থ প্রথম বাঁধ প্রকল্প।</li>
-                </ul>
-            </div>
-        </div>
+<h2 class="section-title">Subjects</h2>
 
-        <!-- 7. Notable Personalities and Culture -->
-        <div class="mt-6">
-            <h2 class="handwritten-title text-xl font-bold flex items-center mb-3">
-                <span class="text-white bg-red-600 rounded-full w-7 h-7 inline-flex items-center justify-center text-sm mr-2">৭</span>
-                বিশিষ্ট ব্যক্তিত্ব ও সংস্কৃতি (Culture & Heritage)
-            </h2>
-            <div class="pl-4 border-l-4 border-red-200 space-y-2 text-blue-900">
-                <p>
-                    🖋️ <strong class="text-red-700">কাজী নজরুল ইসলাম:</strong> 
-                    ১৮৯৯ সালের ২৪শে মে পশ্চিম বর্ধমানের <span class="highlight">চুরুলিয়া (Churulia)</span> গ্রামে জন্মগ্রহণ করেন। তিনি ভারতের স্বাধীনতা আন্দোলনের প্রখ্যাত কবি এবং বর্তমানে বাংলাদেশের জাতীয় কবি হিসেবে সম্মানিত।
-                </p>
-                <div class="mnemonic-box my-3">
-                    <p class="font-bold text-green-700">🎯 বিশেষ হোমওয়ার্ক টীকা (পরীক্ষায় আসা প্রশ্ন):</p>
-                    <p class="text-green-800">
-                        পশ্চিমবঙ্গের বিখ্যাত <span class="highlight">রাস উৎসব (Rash Utsav)</span> মূলত উত্তরবঙ্গের <strong class="underline">কোচবিহার (Cooch Behar)</strong> জেলায় রাজকীয় মর্যাদায় পালিত হয়।
-                    </p>
-                </div>
-            </div>
-        </div>
+<div class="grid">
 
-        <!-- Topper's Quick Memory Trick & Mnemonics Box -->
-        <div class="mt-6">
-            <h2 class="handwritten-title text-xl font-bold flex items-center mb-2 text-green-700">
-                💡 Topper's Quick Revision Mnemonics (সহজ মনে রাখার উপায়)
-            </h2>
-            <div class="mnemonic-box space-y-2 text-sm text-green-800">
-                <p><strong>১. আসানসোল মহকুমার ৪টি ব্লক মনে রাখার সহজ সূত্র:</strong></p>
-                <p class="font-semibold bg-green-100 p-2 rounded">
-                    👉 <span class="underline">"রানী সলমনের বারান্দায় জাম খাবে"</span>
-                </p>
-                <ul class="list-disc pl-6 text-xs space-y-1">
-                    <li><strong>রানী</strong> = রাণীগঞ্জ (Raniganj)</li>
-                    <li><strong>সলমন</strong> = সালানপুর (Salanpur)</li>
-                    <li><strong>বারান্দা</strong> = বারাবনী (Baraboni)</li>
-                    <li><strong>জাম</strong> = জামুড়িয়া (Jamuria)</li>
-                </ul>
-            </div>
-        </div>
+<div class="card" onclick="openPopup('science')">
 
-        <!-- Self-Test Quiz Section (Interactive) -->
-        <div class="mt-6 border-t-2 border-dashed border-gray-300 pt-4">
-            <h2 class="handwritten-title text-xl font-bold text-red-600 mb-2">
-                📝 সেলফ-টেস্ট কুইজ (পঞ্চায়েত স্পেশাল ৫টি MCQ)
-            </h2>
-            
-            <div class="space-y-4 text-xs text-blue-950">
-                <!-- Question 1 -->
-                <div class="quiz-item bg-gray-50 p-3 rounded-lg">
-                    <p class="font-semibold">১. কত সালে ভারতের প্রাচীনতম কয়লাখনি সমৃদ্ধ পশ্চিম বর্ধমান জেলাটি পৃথক জেলা হিসেবে আত্মপ্রকাশ করে?</p>
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-2">
-                        <button onclick="checkAnswer(this, false, '৭ই এপ্রিল, ২০১৭')" class="q-btn bg-white border border-gray-300 p-2 rounded text-left hover:bg-gray-100">A) ৭ই এপ্রিল, ২০১৬</button>
-                        <button onclick="checkAnswer(this, true, '৭ই এপ্রিল, ২০১৭')" class="q-btn bg-white border border-gray-300 p-2 rounded text-left hover:bg-gray-100">B) ৭ই এপ্রিল, ২০১৭</button>
-                        <button onclick="checkAnswer(this, false, '৭ই এপ্রিল, ২০১৭')" class="q-btn bg-white border border-gray-300 p-2 rounded text-left hover:bg-gray-100">C) ১লা আগস্ট, ২০১৭</button>
-                        <button onclick="checkAnswer(this, false, '৭ই এপ্রিল, ২০১৭')" class="q-btn bg-white border border-gray-300 p-2 rounded text-left hover:bg-gray-100">D) ১৫ই আগস্ট, ২০১৫</button>
-                    </div>
-                </div>
+<h3>🧪 General Science</h3>
 
-                <!-- Question 2 -->
-                <div class="quiz-item bg-gray-50 p-3 rounded-lg">
-                    <p class="font-semibold">২. দামোদর উপত্যকা কর্পোরেশন (DVC)-এর অধীন নির্মিত প্রথম বাঁধ ‘তিলইয়া বাঁধ’ কোন নদীর ওপর গড়ে তোলা হয়েছে?</p>
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-2">
-                        <button onclick="checkAnswer(this, false, 'বরাকর')" class="q-btn bg-white border border-gray-300 p-2 rounded text-left hover:bg-gray-100">A) দামোদর নদী</button>
-                        <button onclick="checkAnswer(this, false, 'বরাকর')" class="q-btn bg-white border border-gray-300 p-2 rounded text-left hover:bg-gray-100">B) অজয় নদী</button>
-                        <button onclick="checkAnswer(this, true, 'বরাকর')" class="q-btn bg-white border border-gray-300 p-2 rounded text-left hover:bg-gray-100">C) বরাকর নদী</button>
-                        <button onclick="checkAnswer(this, false, 'বরাকর')" class="q-btn bg-white border border-gray-300 p-2 rounded text-left hover:bg-gray-100">D) কংসাবতী নদী</button>
-                    </div>
-                </div>
+<span>128 Notes</span>
 
-                <!-- Question 3 -->
-                <div class="quiz-item bg-gray-50 p-3 rounded-lg">
-                    <p class="font-semibold">৩. নিচের কোন সমষ্টি উন্নয়ন ব্লকটি (CD Block) দুর্গাপুর মহকুমার অন্তর্গত নয়?</p>
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-2">
-                        <button onclick="checkAnswer(this, false, 'সালানপুর')" class="q-btn bg-white border border-gray-300 p-2 rounded text-left hover:bg-gray-100">A) কাঁকসা</button>
-                        <button onclick="checkAnswer(this, true, 'সালানপুর')" class="q-btn bg-white border border-gray-300 p-2 rounded text-left hover:bg-gray-100">B) সালানপুর</button>
-                        <button onclick="checkAnswer(this, false, 'সালানপুর')" class="q-btn bg-white border border-gray-300 p-2 rounded text-left hover:bg-gray-100">C) অন্ডাল</button>
-                        <button onclick="checkAnswer(this, false, 'সালানপুর')" class="q-btn bg-white border border-gray-300 p-2 rounded text-left hover:bg-gray-100">D) পাণ্ডবেশ্বর</button>
-                    </div>
-                </div>
-            </div>
+</div>
 
-            <!-- Short Questions inside paper margin -->
-            <div class="mt-4 p-3 bg-red-50 rounded-lg text-xs space-y-2">
-                <p class="font-bold text-red-700">📖 সংক্ষিপ্ত প্রশ্নোত্তর এবং সেলফ ইভ্যালুয়েশন:</p>
-                <div class="text-blue-900 space-y-1">
-                    <p><strong>Q1. বেসিন-এর চুক্তি কোন গভর্নর জেনারেলের সময়ে স্বাক্ষরিত হয়?</strong></p>
-                    <p class="solution-text hidden text-green-700 font-semibold">-> লর্ড ওয়েলেসলি (১৮০২ সালে)।</p>
-                    
-                    <p><strong>Q2. আসানসোল ও দুর্গাপুর মহকুমা মিলিয়ে মোট কতটি গ্রাম পঞ্চায়েত রয়েছে?</strong></p>
-                    <p class="solution-text hidden text-green-700 font-semibold">-> মোট ৬২টি গ্রাম পঞ্চায়েত (আসানসোলে ৩৫টি, দুর্গাপুরে ২৭টি)।</p>
+<div class="card" onclick="openPopup('geo')">
 
-                    <p><strong>Q3. কবি কাজী নজরুল ইসলামের চুরুলিয়া গ্রামটি কোন জেলায় অবস্থিত?</strong></p>
-                    <p class="solution-text hidden text-green-700 font-semibold">-> পশ্চিম বর্ধমান জেলায়।</p>
-                </div>
-            </div>
-        </div>
+<h3>🌍 Geography</h3>
 
-        <!-- Footer for Page 3 -->
-        <div class="absolute bottom-4 left-0 right-0 text-center text-xs text-gray-400">
-            Page 3 of 3 | Handcrafted Topper Notes (Bengal Panchayat Resource Series)
-        </div>
-    </div>
+<span>94 Notes</span>
 
-    <!-- Custom JavaScript for interactive quiz element without alert() -->
-    <script>
-        function checkAnswer(button, isCorrect, correctAnswer) {
-            // Find sibling buttons to reset styles
-            const parent = button.parentNode;
-            const buttons = parent.querySelectorAll('button');
-            
-            buttons.forEach(btn => {
-                btn.disabled = true;
-                btn.classList.remove('bg-white', 'hover:bg-gray-100');
-            });
+</div>
 
-            if (isCorrect) {
-                button.classList.add('bg-green-500', 'text-white', 'border-green-600');
-            } else {
-                button.classList.add('bg-red-500', 'text-white', 'border-red-600');
-                // Highlight the correct option dynamically
-                buttons.forEach(btn => {
-                    if (btn.textContent.includes(correctAnswer)) {
-                        btn.classList.add('bg-green-500', 'text-white', 'border-green-600');
-                    }
-                });
-            }
-        }
+<div class="card">
 
-        function toggleSolutions() {
-            const solutions = document.querySelectorAll('.solution-text');
-            solutions.forEach(sol => {
-                sol.classList.toggle('hidden');
-            });
-        }
-    </script>
+<h3>📜 History</h3>
+
+<span>102 Notes</span>
+
+</div>
+
+<div class="card">
+
+<h3>🏛 Polity</h3>
+
+<span>85 Notes</span>
+
+</div>
+
+<div class="card">
+
+<h3>🧮 Mathematics</h3>
+
+<span>140 Notes</span>
+
+</div>
+
+<div class="card">
+
+<h3>🧠 Reasoning</h3>
+
+<span>78 Notes</span>
+
+</div>
+
+</div>
+
+<br><br>
+
+<h2 class="section-title">Recently Opened</h2>
+
+<div class="grid">
+
+<div class="card">
+
+Paschim Bardhaman
+
+</div>
+
+<div class="card">
+
+Atomic Structure
+
+</div>
+
+<div class="card">
+
+Indian Constitution
+
+</div>
+
+</div>
+
+</main>
+
+</div>
+
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+
+<div class="popup" id="science">
+
+<span class="close" onclick="closePopup()">✖</span>
+
+<h2>🧪 General Science</h2>
+
+<a href="science/inorganic.html" target="_blank">Inorganic Chemistry</a>
+
+<a href="science/organic.html" target="_blank">Organic Chemistry</a>
+
+<a href="science/physics.html" target="_blank">Physics</a>
+
+<a href="science/biology.html" target="_blank">Biology</a>
+
+</div>
+
+<div class="popup" id="geo">
+
+<span class="close" onclick="closePopup()">✖</span>
+
+<h2>🌍 Geography</h2>
+
+<a href="geography/paschim-bardhaman.html" target="_blank">Paschim Bardhaman</a>
+
+<a href="geography/india.html" target="_blank">India Geography</a>
+
+<a href="geography/west-bengal.html" target="_blank">West Bengal</a>
+
+</div>
+
+<footer>
+
+© 2026 Topper Study Hub | Hosted with GitHub Pages
+
+</footer>
+
+<script>
+
+function openPopup(id){
+
+document.getElementById("overlay").style.display="block";
+
+document.getElementById(id).style.display="block";
+
+}
+
+function closePopup(){
+
+document.getElementById("overlay").style.display="none";
+
+document.querySelectorAll(".popup").forEach(p=>p.style.display="none");
+
+}
+
+function toggleTheme(){
+
+document.body.classList.toggle("dark");
+
+localStorage.setItem("theme",
+
+document.body.classList.contains("dark"));
+
+}
+
+if(localStorage.getItem("theme")=="true")
+
+document.body.classList.add("dark");
+
+</script>
+
 </body>
 </html>
