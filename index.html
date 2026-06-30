@@ -1,515 +1,492 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Topper Study Hub - Premium Study Notes">
+
+<meta name="keywords" content="WBPSC, RRB, SSC, ICDS, Panchayat, Notes">
+
+<meta name="theme-color" content="#2563eb">
 
 <title>Topper Study Hub</title>
 
+<link rel="manifest" href="manifest.json">
+
+<link rel="icon" href="assets/favicon.ico">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
-}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-body{
-background:#f5f7fb;
-color:#222;
-transition:.4s;
-}
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-body.dark{
-background:#10131b;
-color:white;
-}
-
-header{
-
-background:linear-gradient(135deg,#2563eb,#0ea5e9);
-
-padding:25px;
-
-color:white;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-position:sticky;
-
-top:0;
-
-z-index:1000;
-
-box-shadow:0 10px 30px rgba(0,0,0,.15);
-
-}
-
-.logo{
-
-font-size:30px;
-
-font-weight:700;
-
-}
-
-.search{
-
-width:350px;
-
-max-width:90%;
-
-padding:12px 18px;
-
-border-radius:30px;
-
-border:none;
-
-outline:none;
-
-font-size:15px;
-
-}
-
-.theme{
-
-cursor:pointer;
-
-font-size:28px;
-
-}
-
-.hero{
-
-padding:60px 30px;
-
-text-align:center;
-
-background:linear-gradient(135deg,#3b82f6,#06b6d4);
-
-color:white;
-
-}
-
-.hero h1{
-
-font-size:45px;
-
-margin-bottom:15px;
-
-}
-
-.hero p{
-
-font-size:18px;
-
-opacity:.9;
-
-}
-
-.container{
-
-display:flex;
-
-}
-
-.sidebar{
-
-width:240px;
-
-background:white;
-
-padding:25px;
-
-min-height:100vh;
-
-box-shadow:4px 0 20px rgba(0,0,0,.05);
-
-}
-
-body.dark .sidebar{
-
-background:#181d29;
-
-}
-
-.sidebar a{
-
-display:block;
-
-padding:14px;
-
-text-decoration:none;
-
-color:inherit;
-
-border-radius:10px;
-
-margin-bottom:8px;
-
-transition:.3s;
-
-}
-
-.sidebar a:hover{
-
-background:#2563eb;
-
-color:white;
-
-}
-
-.main{
-
-flex:1;
-
-padding:40px;
-
-}
-
-.section-title{
-
-font-size:30px;
-
-margin-bottom:25px;
-
-}
-
-.grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-gap:25px;
-
-}
-
-.card{
-
-background:white;
-
-padding:25px;
-
-border-radius:20px;
-
-cursor:pointer;
-
-transition:.35s;
-
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-
-}
-
-body.dark .card{
-
-background:#1b2230;
-
-}
-
-.card:hover{
-
-transform:translateY(-8px);
-
-}
-
-.card h3{
-
-margin-bottom:12px;
-
-}
-
-.card span{
-
-font-size:14px;
-
-color:#777;
-
-}
-
-.popup{
-
-position:fixed;
-
-left:50%;
-
-top:50%;
-
-transform:translate(-50%,-50%);
-
-background:white;
-
-width:450px;
-
-max-width:95%;
-
-border-radius:20px;
-
-display:none;
-
-padding:25px;
-
-z-index:999;
-
-box-shadow:0 25px 60px rgba(0,0,0,.25);
-
-}
-
-body.dark .popup{
-
-background:#1c2434;
-
-}
-
-.popup h2{
-
-margin-bottom:20px;
-
-}
-
-.popup a{
-
-display:block;
-
-padding:14px;
-
-margin:8px 0;
-
-background:#f1f5f9;
-
-border-radius:10px;
-
-text-decoration:none;
-
-color:#222;
-
-transition:.3s;
-
-}
-
-body.dark .popup a{
-
-background:#2a3243;
-
-color:white;
-
-}
-
-.popup a:hover{
-
-background:#2563eb;
-
-color:white;
-
-}
-
-.close{
-
-float:right;
-
-cursor:pointer;
-
-font-size:22px;
-
-}
-
-.overlay{
-
-position:fixed;
-
-left:0;
-
-top:0;
-
-width:100%;
-
-height:100%;
-
-background:rgba(0,0,0,.45);
-
-display:none;
-
-z-index:998;
-
-}
-
-footer{
-
-padding:40px;
-
-text-align:center;
-
-color:#888;
-
-}
-
-@media(max-width:900px){
-
-.container{
-
-flex-direction:column;
-
-}
-
-.sidebar{
-
-width:100%;
-
-min-height:auto;
-
-display:flex;
-
-overflow:auto;
-
-}
-
-.sidebar a{
-
-white-space:nowrap;
-
-margin-right:10px;
-
-}
-
-.hero h1{
-
-font-size:34px;
-
-}
-
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<header>
+<!-- ========================================= -->
+<!-- Loading Screen -->
+<!-- ========================================= -->
 
-<div class="logo">📚 Topper Study Hub</div>
+<div id="loader">
 
-<input class="search" placeholder="Search notes...">
+<div class="loader-box">
 
-<div class="theme" onclick="toggleTheme()">🌙</div>
+<div class="loader-logo">
+
+📚
+
+</div>
+
+<h1>Topper Study Hub</h1>
+
+<p>Preparing your study dashboard...</p>
+
+<div class="loader-bar">
+
+<div class="loader-progress"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- Header -->
+<!-- ========================================= -->
+
+<header class="header">
+
+<div class="logo">
+
+<img src="assets/logo.png" alt="logo">
+
+<div>
+
+<h2>Topper Study Hub</h2>
+
+<span>Premium Notes Collection</span>
+
+</div>
+
+</div>
+
+<div class="header-search">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+id="globalSearch"
+placeholder="Search notes, chapters, subjects...">
+
+</div>
+
+<div class="header-right">
+
+<button id="themeBtn">
+
+<i class="fa-solid fa-moon"></i>
+
+</button>
+
+<button id="menuBtn">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+</div>
 
 </header>
 
+<!-- ========================================= -->
+<!-- Hero -->
+<!-- ========================================= -->
+
 <section class="hero">
 
-<h1>Topper Study Notes</h1>
+<div class="hero-left">
 
-<p>One place for all your handwritten notes</p>
+<h1>
+
+Master Every Exam
+
+with
+
+<span>Topper Notes</span>
+
+</h1>
+
+<p>
+
+A single place for
+
+WBPSC,
+
+RRB,
+
+SSC,
+
+ICDS,
+
+Panchayat,
+
+Railway,
+
+School Service,
+
+Competitive Exams.
+
+</p>
+
+<div class="hero-buttons">
+
+<button class="primary-btn">
+
+Start Learning
+
+</button>
+
+<button class="secondary-btn">
+
+Browse Subjects
+
+</button>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<img src="assets/banner.jpg" alt="banner">
+
+</div>
 
 </section>
 
-<div class="container">
+<!-- ========================================= -->
+<!-- Statistics -->
+<!-- ========================================= -->
 
-<nav class="sidebar">
+<section class="stats">
 
-<a href="#">🏠 Home</a>
+<div class="stat-card">
 
-<a href="#">📚 Subjects</a>
+<i class="fa-solid fa-book-open"></i>
 
-<a href="#">⭐ Favorites</a>
+<h2 id="totalSubjects">
 
-<a href="#">🕒 Recent</a>
+12
 
-<a href="#">📄 All Notes</a>
+</h2>
 
-<a href="#">📥 Downloads</a>
+<p>Subjects</p>
 
-<a href="#">⚙ Settings</a>
+</div>
 
-</nav>
+<div class="stat-card">
 
-<main class="main">
+<i class="fa-solid fa-file-lines"></i>
 
-<h2 class="section-title">Subjects</h2>
+<h2 id="totalNotes">
 
-<div class="grid">
+580
 
-<div class="card" onclick="openPopup('science')">
+</h2>
 
-<h3>🧪 General Science</h3>
+<p>Study Notes</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-star"></i>
+
+<h2>
+
+0
+
+</h2>
+
+<p>Favorites</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+<h2>
+
+0
+
+</h2>
+
+<p>Recent</p>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Dashboard -->
+<!-- ========================================= -->
+
+<div class="dashboard">
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+<ul>
+
+<li class="active">
+
+<a href="#">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Home</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#subjects">
+
+<i class="fa-solid fa-book"></i>
+
+<span>Subjects</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#favorites">
+
+<i class="fa-solid fa-heart"></i>
+
+<span>Favorites</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#recent">
+
+<i class="fa-solid fa-clock"></i>
+
+<span>Recent</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#downloads">
+
+<i class="fa-solid fa-download"></i>
+
+<span>Downloads</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#about">
+
+<i class="fa-solid fa-circle-info"></i>
+
+<span>About</span>
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- Main Content -->
+
+<main class="content">
+
+<section class="section-title">
+
+<h2>
+
+Popular Subjects
+
+</h2>
+
+<p>
+
+Choose a subject to open its chapters.
+
+</p>
+
+</section>
+
+<!-- Subject Grid Starts Here -->
+
+<div
+class="subjects-grid"
+id="subjectsGrid">
+
+<!-- JavaScript will automatically load subject cards here -->
+
+</div>
+
+  <!-- ========================================= -->
+<!-- Subject Cards -->
+<!-- ========================================= -->
+
+<div class="subject-card" data-subject="General Science">
+
+<div class="subject-icon">
+🧪
+</div>
+
+<h3>General Science</h3>
+
+<p>Chemistry • Physics • Biology</p>
 
 <span>128 Notes</span>
 
-</div>
+<button class="openSubject"
+data-subject="General Science">
 
-<div class="card" onclick="openPopup('geo')">
+Open Subject
 
-<h3>🌍 Geography</h3>
-
-<span>94 Notes</span>
-
-</div>
-
-<div class="card">
-
-<h3>📜 History</h3>
-
-<span>102 Notes</span>
+</button>
 
 </div>
 
-<div class="card">
+<div class="subject-card" data-subject="Geography">
 
-<h3>🏛 Polity</h3>
+<div class="subject-icon">
+🌍
+</div>
 
-<span>85 Notes</span>
+<h3>Geography</h3>
+
+<p>India • West Bengal • World</p>
+
+<span>96 Notes</span>
+
+<button class="openSubject"
+data-subject="Geography">
+
+Open Subject
+
+</button>
 
 </div>
 
-<div class="card">
+<div class="subject-card" data-subject="History">
 
-<h3>🧮 Mathematics</h3>
+<div class="subject-icon">
+📜
+</div>
+
+<h3>History</h3>
+
+<p>Ancient • Medieval • Modern</p>
+
+<span>110 Notes</span>
+
+<button class="openSubject"
+data-subject="History">
+
+Open Subject
+
+</button>
+
+</div>
+
+<div class="subject-card" data-subject="Polity">
+
+<div class="subject-icon">
+🏛
+</div>
+
+<h3>Polity</h3>
+
+<p>Constitution • Parliament</p>
+
+<span>75 Notes</span>
+
+<button class="openSubject"
+data-subject="Polity">
+
+Open Subject
+
+</button>
+
+</div>
+
+<div class="subject-card" data-subject="Mathematics">
+
+<div class="subject-icon">
+🧮
+</div>
+
+<h3>Mathematics</h3>
+
+<p>Arithmetic • Algebra • Geometry</p>
 
 <span>140 Notes</span>
 
-</div>
+<button class="openSubject"
+data-subject="Mathematics">
 
-<div class="card">
+Open Subject
 
-<h3>🧠 Reasoning</h3>
-
-<span>78 Notes</span>
-
-</div>
+</button>
 
 </div>
 
-<br><br>
+<div class="subject-card" data-subject="Reasoning">
 
-<h2 class="section-title">Recently Opened</h2>
-
-<div class="grid">
-
-<div class="card">
-
-Paschim Bardhaman
-
+<div class="subject-icon">
+🧠
 </div>
 
-<div class="card">
+<h3>Reasoning</h3>
 
-Atomic Structure
+<p>Verbal • Non-Verbal</p>
 
-</div>
+<span>88 Notes</span>
 
-<div class="card">
+<button class="openSubject"
+data-subject="Reasoning">
 
-Indian Constitution
+Open Subject
 
-</div>
+</button>
 
 </div>
 
@@ -517,77 +494,437 @@ Indian Constitution
 
 </div>
 
-<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<!-- ========================================= -->
+<!-- Recently Opened -->
+<!-- ========================================= -->
 
-<div class="popup" id="science">
+<section
+class="recent-section"
+id="recent">
 
-<span class="close" onclick="closePopup()">✖</span>
+<div class="section-title">
 
-<h2>🧪 General Science</h2>
+<h2>
 
-<a href="science/inorganic.html" target="_blank">Inorganic Chemistry</a>
+Recently Opened
 
-<a href="science/organic.html" target="_blank">Organic Chemistry</a>
+</h2>
 
-<a href="science/physics.html" target="_blank">Physics</a>
+</div>
 
-<a href="science/biology.html" target="_blank">Biology</a>
+<div
+class="recent-grid"
+id="recentGrid">
+
+<div class="empty-card">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+<p>
+
+No recent notes yet.
+
+</p>
 
 </div>
 
-<div class="popup" id="geo">
+</div>
 
-<span class="close" onclick="closePopup()">✖</span>
+</section>
 
-<h2>🌍 Geography</h2>
+<!-- ========================================= -->
+<!-- Favourite Notes -->
+<!-- ========================================= -->
 
-<a href="geography/paschim-bardhaman.html" target="_blank">Paschim Bardhaman</a>
+<section
+class="favorite-section"
+id="favorites">
 
-<a href="geography/india.html" target="_blank">India Geography</a>
+<div class="section-title">
 
-<a href="geography/west-bengal.html" target="_blank">West Bengal</a>
+<h2>
+
+Favourite Notes
+
+</h2>
 
 </div>
+
+<div
+class="favorite-grid"
+id="favoriteGrid">
+
+<div class="empty-card">
+
+<i class="fa-solid fa-heart"></i>
+
+<p>
+
+No favourite notes yet.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Subject Popup -->
+<!-- ========================================= -->
+
+<div
+class="popup-overlay"
+id="popupOverlay">
+
+<div class="popup-window">
+
+<div class="popup-header">
+
+<h2 id="popupTitle">
+
+Subject
+
+</h2>
+
+<button id="closePopup">
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</div>
+
+<div class="popup-search">
+
+<input
+type="text"
+id="chapterSearch"
+placeholder="Search chapters...">
+
+</div>
+
+<div
+class="chapter-list"
+id="chapterList">
+
+<!-- JavaScript will create chapters automatically -->
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- Search Result Popup -->
+<!-- ========================================= -->
+
+<div
+class="search-popup"
+id="searchPopup">
+
+<div class="search-header">
+
+<h3>
+
+Search Results
+
+</h3>
+
+</div>
+
+<div
+id="searchResults">
+
+<p>
+
+Start typing to search...
+
+</p>
+
+</div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- Floating Buttons -->
+<!-- ========================================= -->
+
+<button
+id="scrollTop"
+class="floating-btn">
+
+<i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<button
+id="quickSearch"
+class="floating-btn">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</button>
+
+<!-- ========================================= -->
+<!-- Footer -->
+<!-- ========================================= -->
 
 <footer>
 
-© 2026 Topper Study Hub | Hosted with GitHub Pages
+<div class="footer-grid">
+
+<div>
+
+<h3>
+
+Topper Study Hub
+
+</h3>
+
+<p>
+
+Professional handwritten notes for
+competitive examinations.
+
+</p>
+
+</div>
+
+<div>
+
+<h4>
+
+Subjects
+
+</h4>
+
+<ul>
+
+<li>Science</li>
+
+<li>Geography</li>
+
+<li>History</li>
+
+<li>Polity</li>
+
+<li>Reasoning</li>
+
+<li>Mathematics</li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>
+
+Examinations
+
+</h4>
+
+<ul>
+
+<li>WBPSC</li>
+
+<li>RRB NTPC</li>
+
+<li>SSC</li>
+
+<li>ICDS</li>
+
+<li>Panchayat</li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>
+
+Quick Links
+
+</h4>
+
+<ul>
+
+<li>About</li>
+
+<li>Privacy</li>
+
+<li>Contact</li>
+
+<li>GitHub</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="copyright">
+
+© 2026 Topper Study Hub
+
+Made with ❤️ for Students
+
+</div>
 
 </footer>
 
+<!-- ========================================= -->
+<!-- Hidden Templates -->
+<!-- ========================================= -->
+
+<template id="subjectTemplate">
+
+<div class="subject-card">
+
+<div class="subject-icon"></div>
+
+<h3 class="subject-name"></h3>
+
+<p class="subject-description"></p>
+
+<span class="subject-count"></span>
+
+<button class="openSubject">
+
+Open Subject
+
+</button>
+
+</div>
+
+</template>
+
+<template id="chapterTemplate">
+
+<a
+class="chapter-item"
+target="_blank">
+
+<i class="fa-solid fa-file-lines"></i>
+
+<span class="chapter-title"></span>
+
+<i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+</a>
+
+</template>
+
+<template id="searchTemplate">
+
+<a
+class="search-item"
+target="_blank">
+
+<div>
+
+<h4 class="search-title"></h4>
+
+<p class="search-subject"></p>
+
+</div>
+
+</a>
+
+</template>
+
+<!-- ========================================= -->
+<!-- Toast Notification -->
+<!-- ========================================= -->
+
+<div
+id="toast"
+class="toast">
+
+<span id="toastMessage">
+
+Notification
+
+</span>
+
+</div>
+
+<!-- ========================================= -->
+<!-- Backdrop -->
+<!-- ========================================= -->
+
+<div
+id="backdrop">
+
+</div>
+
+<!-- ========================================= -->
+<!-- Install App Button -->
+<!-- ========================================= -->
+
+<button
+id="installApp"
+class="install-app">
+
+<i class="fa-solid fa-download"></i>
+
+Install App
+
+</button>
+
+<!-- ========================================= -->
+<!-- JavaScript -->
+<!-- ========================================= -->
+
+<script src="script.js"></script>
+
 <script>
 
-function openPopup(id){
+/* Remove Loader */
 
-document.getElementById("overlay").style.display="block";
+window.addEventListener("load",function(){
 
-document.getElementById(id).style.display="block";
+const loader=document.getElementById("loader");
+
+setTimeout(function(){
+
+loader.classList.add("hide");
+
+},700);
+
+});
+
+/* Register Service Worker */
+
+if("serviceWorker" in navigator){
+
+window.addEventListener("load",()=>{
+
+navigator.serviceWorker.register("sw.js")
+
+.then(()=>{
+
+console.log("Service Worker Registered");
+
+})
+
+.catch(err=>{
+
+console.log(err);
+
+});
+
+});
 
 }
-
-function closePopup(){
-
-document.getElementById("overlay").style.display="none";
-
-document.querySelectorAll(".popup").forEach(p=>p.style.display="none");
-
-}
-
-function toggleTheme(){
-
-document.body.classList.toggle("dark");
-
-localStorage.setItem("theme",
-
-document.body.classList.contains("dark"));
-
-}
-
-if(localStorage.getItem("theme")=="true")
-
-document.body.classList.add("dark");
 
 </script>
 
 </body>
+
 </html>
+  
