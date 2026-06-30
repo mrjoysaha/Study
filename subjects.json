@@ -1,0 +1,193 @@
+[
+  {
+    "id": 1,
+    "subject": "Geography",
+    "category": "West Bengal",
+    "title": "Paschim Bardhaman District",
+    "description": "Complete district study notes",
+    "keywords": "paschim bardhaman district geography wb panchayat icds",
+    "file": "notes/geography/paschim-bardhaman.html",
+    "icon": "🌍",
+    "exam": [
+      "WBPSC",
+      "Panchayat",
+      "ICDS"
+    ],
+    "favorite": false
+  },
+
+  {
+    "id": 2,
+    "subject": "Geography",
+    "category": "West Bengal",
+    "title": "West Bengal Geography",
+    "description": "Complete WB Geography",
+    "keywords": "west bengal geography rivers districts",
+    "file": "notes/geography/west-bengal.html",
+    "icon": "🌍",
+    "exam": [
+      "WBPSC",
+      "SSC"
+    ],
+    "favorite": false
+  },
+
+  {
+    "id": 3,
+    "subject": "General Science",
+    "category": "Chemistry",
+    "title": "Inorganic Chemistry",
+    "description": "RRB NTPC Session 06",
+    "keywords": "chemistry inorganic atomic structure metal",
+    "file": "notes/chemistry/inorganic.html",
+    "icon": "🧪",
+    "exam": [
+      "RRB",
+      "SSC"
+    ],
+    "favorite": false
+  },
+
+  {
+    "id": 4,
+    "subject": "General Science",
+    "category": "Chemistry",
+    "title": "Organic Chemistry",
+    "description": "Hydrocarbon and Reactions",
+    "keywords": "organic chemistry hydrocarbon carbon",
+    "file": "notes/chemistry/organic.html",
+    "icon": "🧪",
+    "exam": [
+      "RRB",
+      "SSC"
+    ],
+    "favorite": false
+  },
+
+  {
+    "id": 5,
+    "subject": "History",
+    "category": "Ancient",
+    "title": "Ancient India",
+    "description": "Ancient Indian History",
+    "keywords": "history ancient india harappa vedic",
+    "file": "notes/history/ancient.html",
+    "icon": "📜",
+    "exam": [
+      "WBPSC",
+      "SSC"
+    ],
+    "favorite": false
+  },
+
+  {
+    "id": 6,
+    "subject": "History",
+    "category": "Modern",
+    "title": "Modern India",
+    "description": "Freedom Movement",
+    "keywords": "modern history congress freedom",
+    "file": "notes/history/modern.html",
+    "icon": "📜",
+    "exam": [
+      "WBPSC"
+    ],
+    "favorite": false
+  },
+
+  {
+    "id": 7,
+    "subject": "Polity",
+    "category": "Indian Constitution",
+    "title": "Indian Constitution",
+    "description": "Constitution Notes",
+    "keywords": "constitution polity parliament president",
+    "file": "notes/polity/constitution.html",
+    "icon": "🏛",
+    "exam": [
+      "WBPSC",
+      "SSC"
+    ],
+    "favorite": false
+  },
+
+  {
+    "id": 8,
+    "subject": "Mathematics",
+    "category": "Arithmetic",
+    "title": "Percentage",
+    "description": "Percentage Notes",
+    "keywords": "percentage arithmetic math",
+    "file": "notes/math/percentage.html",
+    "icon": "🧮",
+    "exam": [
+      "SSC",
+      "RRB"
+    ],
+    "favorite": false
+  },
+
+  {
+    "id": 9,
+    "subject": "Mathematics",
+    "category": "Arithmetic",
+    "title": "Profit and Loss",
+    "description": "Profit Loss Notes",
+    "keywords": "profit loss arithmetic",
+    "file": "notes/math/profit-loss.html",
+    "icon": "🧮",
+    "exam": [
+      "SSC",
+      "RRB"
+    ],
+    "favorite": false
+  },
+
+  {
+    "id": 10,
+    "subject": "Reasoning",
+    "category": "Verbal",
+    "title": "Analogy",
+    "description": "Reasoning Notes",
+    "keywords": "analogy reasoning verbal",
+    "file": "notes/reasoning/analogy.html",
+    "icon": "🧠",
+    "exam": [
+      "SSC",
+      "RRB"
+    ],
+    "favorite": false
+  },
+
+  {
+    "id": 11,
+    "subject": "Reasoning",
+    "category": "Non Verbal",
+    "title": "Mirror Image",
+    "description": "Mirror Image Notes",
+    "keywords": "mirror image reasoning",
+    "file": "notes/reasoning/mirror-image.html",
+    "icon": "🧠",
+    "exam": [
+      "SSC"
+    ],
+    "favorite": false
+  },
+
+  {
+    "id": 12,
+    "subject": "Current Affairs",
+    "category": "2026",
+    "title": "Current Affairs 2026",
+    "description": "Monthly Current Affairs",
+    "keywords": "current affairs 2026",
+    "file": "notes/current-affairs/current-2026.html",
+    "icon": "📰",
+    "exam": [
+      "WBPSC",
+      "SSC",
+      "RRB"
+    ],
+    "favorite": false
+  }
+]
