@@ -556,7 +556,7 @@ function openSubject(subject){
 
     popupOverlay.classList.add("active");
 
-    document.body.style.overflow = "hidden";
+    document.body.classList.add("popup-open");
 
 }
 
@@ -568,7 +568,7 @@ function closePopup(){
 
     popupOverlay.classList.remove("active");
 
-    document.body.style.overflow = "";
+    document.body.classList.remove("popup-open");
 
 }
 
